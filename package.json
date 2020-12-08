@@ -1,0 +1,42 @@
+{
+  "name": "clean-arch",
+  "version": "1.0.0",
+  "description": "Arquitetura limpa para REST api",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "coverave": "jest --coverage",
+    "lint": "gts lint",
+    "clean": "gts clean",
+    "compile": "tsc",
+    "fix": "gts fix",
+    "prepare": "npm run compile",
+    "pretest": "npm run compile",
+    "posttest": "npm run lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gmvbr/clean-arch.git"
+  },
+  "keywords": [],
+  "author": "gmvbr <https://github.com/gmvbr>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gmvbr/clean-arch/issues"
+  },
+  "homepage": "https://github.com/gmvbr/clean-arch#readme",
+  "devDependencies": {
+    "@types/node": "^14.11.2",
+    "gts": "^3.0.3",
+    "jest": "^26.6.3",
+    "nyc": "^15.1.0",
+    "ts-jest": "^26.4.4",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.1.2"
+  },
+  "dependencies": {
+    "env-schema": "^2.0.1",
+    "fastify": "^3.9.1",
+    "fastify-autoload": "^3.3.1"
+  }
+}
