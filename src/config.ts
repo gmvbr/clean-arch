@@ -2,7 +2,7 @@ import envSchema from 'env-schema';
 
 const schema = {
   type: 'object',
-  required: ['PORT', 'HOST'],
+  required: ['PORT', 'HOST', 'JWT_SECRET'],
   properties: {
     PORT: {
       type: 'string',
@@ -12,12 +12,16 @@ const schema = {
       type: 'string',
       default: '0.0.0.0',
     },
+    JWT_SECRET: {
+      type: 'string',
+    },
   },
 };
 
 export interface Configuration {
   PORT?: string;
   HOST?: string;
+  JWT_SECRET?: string;
 }
 
 export const Config: Configuration = envSchema({
