@@ -42,6 +42,7 @@
     "fastify-blipp": "^3.0.0",
     "fastify-jwt": "^2.1.3",
     "fastify-plugin": "^3.0.0",
+    "fastify-rate-limit": "^4.1.0",
     "fastify-sensible": "^3.0.1"
   }
 }

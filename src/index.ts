@@ -5,6 +5,7 @@ import auth from 'fastify-auth';
 import blipp from 'fastify-blipp';
 import sensible from 'fastify-sensible';
 import autoload from 'fastify-autoload';
+import ratelimit from 'fastify-rate-limit';
 
 import {join} from 'path';
 import {Config, Configuration} from './config';
@@ -23,6 +24,10 @@ export async function bootstrap() {
     .register(auth)
     .register(jwt, {
       secret: Config.JWT_SECRET!,
+    })
+    .register(ratelimit, {
+      max: 100,
+      timeWindow: '1 minute',
     })
     .register(autoload, {
       dir: join(__dirname, 'plugins'),
